@@ -14,6 +14,7 @@ Open browser at [localhost:...]
 
 ## Questions
 - How do the colors work? Should it go through the gradient based on % of the answers?
+- Which one is active, and which one is not active?
 
 ### Requirements:
 - Some form of type checking should be used e.g. flow, propTypes, typescript

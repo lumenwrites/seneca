@@ -1,7 +1,9 @@
 :root {
-  --base-font-size: 14px;
-  --main-font: 'Open Sans';
+  --base-font-size: 24px;
+  --main-font: 'Mulish';
 }
 
 @import './_fonts.scss';
 @import './_reset.scss';
+@import './_global.scss';
+@import './_toggles.scss';

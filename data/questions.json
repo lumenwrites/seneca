@@ -1,0 +1,19 @@
+[
+  {
+    "question": "An animal cell contains",
+    "toggles": [
+      {
+        "correctOption": 0,
+        "options": ["Cell wall", "Ribosomes"]
+      },
+      {
+        "correctOption": 2,
+        "options": ["Partially permeable membrane", "Impermeable  membrane"]
+      },
+      {
+        "correctOption": 0,
+        "options": ["Option 1", "Option 2", "Option 3"]
+      }
+    ]
+  }
+]
