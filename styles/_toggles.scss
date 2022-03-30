@@ -2,8 +2,26 @@
   margin: 20px auto;
   max-width: 960px;
   font-weight: 700;
-  background: linear-gradient(180deg, #f6b868 0%, #ee6b2d 100%);
-  color: white;
+  background: linear-gradient(180deg, #f1b496 0%, #ea806a 100%);
+  position: relative;
+  .option {
+    color: rgba(255, 255, 255, 0.5);
+    &.active {
+      color: #E47958;
+    }
+  }
+  &.partially-correct {
+    background: linear-gradient(180deg, #f6b868 0%, #ee6b2d 100%);
+    .option.active {
+      color: #77412c;
+    }
+  }
+  &.correct {
+    background: linear-gradient(180deg, #76e0c2 0%, #59cada 100%);
+    .option.active {
+      color: #4CAD94;
+    }
+  }
   padding: 120px 0;
   .toggles {
     max-width: 900px;
@@ -15,13 +33,15 @@
       // height: 80px;
       position: relative;
       overflow: hidden;
+      z-index: 2;
       .activeBG {
         position: absolute;
         top: 0;
-        left:0;
+        left: 0;
         height: 100%;
         width: 100%;
-        background: #f8caa3;
+        // background: #f8caa3;
+        background: rgba(255, 255, 255, 0.5);
         border-radius: 40px;
         transition: 0.2s ease-in-out;
       }
@@ -38,9 +58,6 @@
           align-items: center;
           text-align: center;
           cursor: pointer;
-          &.active {
-            color: #9F938B;
-          }
         }
       }
       @media (max-width: 700px) {
@@ -51,7 +68,6 @@
           border-radius: 0;
         }
       }
-
     }
   }
 }

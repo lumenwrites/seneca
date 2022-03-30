@@ -1,23 +1,20 @@
 import { useState } from 'react'
-import questions from 'data/questions.json'
+import { useTogglesContext } from './Question'
 
 export default function Toggles() {
-  const [toggles, setToggles] = useState(questions[0].toggles)
+  const { toggles, setToggles } = useTogglesContext()
+
   return (
-    <div className="toggles">
+    <div className={`toggles`}>
       {toggles.map((toggle) => (
-        <Toggle
-          key={toggle.id}
-          toggle={toggle}
-          toggles={toggles}
-          setToggles={setToggles}
-        />
+        <Toggle key={toggle.id} toggle={toggle} />
       ))}
     </div>
   )
 }
 
-function Toggle({ toggle, toggles, setToggles }) {
+function Toggle({ toggle }) {
+  const { toggles, setToggles } = useTogglesContext()
   const optionSize = 100 / toggle.options.length
   function selectOption(idx) {
     setToggles((prev) => {

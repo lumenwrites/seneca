@@ -1,11 +1,5 @@
-// import Toggles from 'components/Toggles'
-import dynamic from 'next/dynamic'
-const Toggles = dynamic(() => import('../components/Toggles'), { ssr: false })
+import Question from 'components/Question'
 
 export default function Home() {
-  return (
-    <div className={'question'}>
-      <Toggles />
-    </div>
-  )
+  return <Question />
 }
