@@ -18,7 +18,7 @@ export default function Toggles() {
 }
 
 function Toggle({ toggle, toggles, setToggles }) {
-  const optionWidth = 100 / toggle.options.length
+  const optionSize = 100 / toggle.options.length
   function selectOption(idx) {
     setToggles((prev) => {
       const updatedToggles = prev.map((t) => {
@@ -30,6 +30,18 @@ function Toggle({ toggle, toggles, setToggles }) {
       return updatedToggles
     })
   }
+  let activeBackgroundStyles = {
+    width: `${optionSize}%`,
+    left: `${toggle.selectedOption * optionSize}%`,
+  } as any
+  // Responsive
+  if (window.innerWidth < 700) {
+    activeBackgroundStyles = {
+      height: `${optionSize}%`,
+      top: `${toggle.selectedOption * optionSize}%`,
+    }
+  }
+
   return (
     <div className="toggle">
       <div className="options">
@@ -45,13 +57,7 @@ function Toggle({ toggle, toggles, setToggles }) {
           </div>
         ))}
       </div>
-      <div
-        className="activeBG"
-        style={{
-          width: `${optionWidth}%`,
-          left: `${toggle.selectedOption * optionWidth}%`,
-        }}
-      />
+      <div className="activeBG" style={activeBackgroundStyles} />
     </div>
   )
 }

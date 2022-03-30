@@ -12,16 +12,16 @@
       margin-top: 24px;
       border: 2px solid #fbfbfb;
       border-radius: 40px;
-      height: 80px;
+      // height: 80px;
       position: relative;
       overflow: hidden;
       .activeBG {
         position: absolute;
         top: 0;
-        left: 50%;
-        background: #f8caa3;
+        left:0;
         height: 100%;
-        width: 50%;
+        width: 100%;
+        background: #f8caa3;
         border-radius: 40px;
         transition: 0.2s ease-in-out;
       }
@@ -32,20 +32,25 @@
         height: 100%;
         .option {
           width: 100%;
+          height: 80px;
           display: flex;
           justify-content: center;
           align-items: center;
           text-align: center;
-          border-radius: 40px;
-          border: 1px solid red;
           cursor: pointer;
-          animation: color-change 1s infinite;
           &.active {
             color: #9F938B;
           }
         }
       }
-
+      @media (max-width: 700px) {
+        .options {
+          flex-direction: column;
+        }
+        .activeBG {
+          border-radius: 0;
+        }
+      }
 
     }
   }
