@@ -15,7 +15,10 @@ export function useTogglesContext() {
 }
 
 export default function Question() {
-  const [toggles, setToggles] = useState(questions[0].toggles)
+  const randomQuestion = questions[Math.floor(Math.random() * questions.length)]
+  const [toggles, setToggles] = useState(randomQuestion.toggles)
+  
+  // Calculate percentage of correct answers, and set background based on that
   const correctAnswers = toggles.filter(
     (t) => t.selectedOption === t.correctOption
   )

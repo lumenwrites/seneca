@@ -21,5 +21,34 @@
         "options": ["Option 1", "Option 2", "Option 3"]
       }
     ]
+  },
+  {
+    "question": "What are the ideal conditions inside an office?",
+    "toggles": [
+      {
+        "id": 0,
+        "correctOption": 0,
+        "selectedOption": 0,
+        "options": ["Good pay", "Bad pay"]
+      },
+      {
+        "id": 1,
+        "correctOption": 0,
+        "selectedOption": 0,
+        "options": ["More meetings", "Fewer meetings"]
+      },
+      {
+        "id": 2,
+        "correctOption": 0,
+        "selectedOption": 0,
+        "options": ["Free coffee", "Expensive coffee"]
+      },
+      {
+        "id": 3,
+        "correctOption": 0,
+        "selectedOption": 0,
+        "options": ["Bear in office", "Dog in office"]
+      }
+    ]
   }
 ]
