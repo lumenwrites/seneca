@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext, useContext } from 'react'
+import { useState, createContext, useContext } from 'react'
 
 import questions from 'data/questions.json'
 
@@ -16,9 +16,8 @@ export function useTogglesContext() {
 }
 
 export default function Question() {
-  // let randomQuestion = questions[Math.floor(Math.random() * questions.length)]
   const [toggles, setToggles] = useState(questions[0].toggles)
-
+  const [activeQuestion, setActiveQuestion] = useState(0)
   // Calculate percentage of correct answers, and set background based on that
   const correctAnswers = toggles.filter(
     (t) => t.selectedOption === t.correctOption
@@ -28,11 +27,28 @@ export default function Question() {
   if (correctness > 0) correctnessClass = 'partially-correct'
   if (correctness === 1) correctnessClass = 'correct'
   const isLocked = correctness === 1
+
+  function randomizeQuestion() {
+    setActiveQuestion(prev => {
+      let activeQuestion
+      if (prev + 1 === questions.length) {
+        activeQuestion = 0
+      } else {
+        activeQuestion = prev + 1
+      }
+      setToggles(questions[activeQuestion].toggles)
+      return activeQuestion
+    })
+  }
+
   return (
     <TogglesContext.Provider value={{ toggles, setToggles, isLocked }}>
       <div className={`question ${correctnessClass}`}>
         <Toggles />
       </div>
+      <button className="randomize" onClick={randomizeQuestion}>
+        Next Question
+      </button>
     </TogglesContext.Provider>
   )
 }
