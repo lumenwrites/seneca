@@ -10,13 +10,13 @@
       },
       {
         "id": 1,
-        "correctOption": 0,
+        "correctOption": 1,
         "selectedOption": 0,
         "options": ["Partially permeable membrane", "Impermeable  membrane"]
       },
       {
         "id": 2,
-        "correctOption": 0,
+        "correctOption": 2,
         "selectedOption": 0,
         "options": ["Option 1", "Option 2", "Option 3"]
       }
@@ -48,6 +48,22 @@
         "correctOption": 0,
         "selectedOption": 0,
         "options": ["Bear in office", "Dog in office"]
+      }
+    ]
+  },  {
+    "question": "Which are the best sports people & teams?",
+    "toggles": [
+      {
+        "id": 0,
+        "correctOption": 0,
+        "selectedOption": 0,
+        "options": ["Liverpool", "Chelsea", "Man Utd"]
+      },
+      {
+        "id": 1,
+        "correctOption": 0,
+        "selectedOption": 0,
+        "options": ["Serena Williams", "Naomi Osaka"]
       }
     ]
   }

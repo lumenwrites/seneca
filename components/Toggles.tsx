@@ -1,8 +1,7 @@
-import { useState } from 'react'
 import { useTogglesContext } from './Question'
 
 export default function Toggles() {
-  const { toggles, setToggles } = useTogglesContext()
+  const { toggles } = useTogglesContext()
 
   return (
     <div className={`toggles`}>
@@ -14,9 +13,10 @@ export default function Toggles() {
 }
 
 function Toggle({ toggle }) {
-  const { toggles, setToggles } = useTogglesContext()
+  const { toggles, isLocked, setToggles } = useTogglesContext()
   const optionSize = 100 / toggle.options.length
   function selectOption(idx) {
+    if (isLocked) return
     setToggles((prev) => {
       const updatedToggles = prev.map((t) => {
         if (t.id === toggle.id) {
@@ -38,21 +38,23 @@ function Toggle({ toggle }) {
       top: `${toggle.selectedOption * optionSize}%`,
     }
   }
-
   return (
     <div className="toggle">
       <div className="options">
-        {toggle.options.map((option, idx) => (
-          <div
-            key={idx}
-            className={`option ${
-              idx === toggle.selectedOption ? 'active' : ''
-            }`}
-            onClick={() => selectOption(idx)}
-          >
-            {option}
-          </div>
-        ))}
+        {toggle.options.map((option, idx) => {
+          let className = 'option'
+          if (idx === toggle.selectedOption) className += ' active'
+          if (isLocked) className += ' locked'
+          return (
+            <div
+              key={idx}
+              className={className}
+              onClick={() => selectOption(idx)}
+            >
+              {option}
+            </div>
+          )
+        })}
       </div>
       <div className="activeBG" style={activeBackgroundStyles} />
     </div>

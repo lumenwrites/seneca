@@ -8,6 +8,7 @@ const Toggles = dynamic(() => import('../components/Toggles'), { ssr: false })
 const TogglesContext = createContext({
   toggles: [],
   setToggles: (prev) => {},
+  isLocked: false,
 })
 
 export function useTogglesContext() {
@@ -15,9 +16,9 @@ export function useTogglesContext() {
 }
 
 export default function Question() {
-  const randomQuestion = questions[Math.floor(Math.random() * questions.length)]
-  const [toggles, setToggles] = useState(randomQuestion.toggles)
-  
+  // let randomQuestion = questions[Math.floor(Math.random() * questions.length)]
+  const [toggles, setToggles] = useState(questions[0].toggles)
+
   // Calculate percentage of correct answers, and set background based on that
   const correctAnswers = toggles.filter(
     (t) => t.selectedOption === t.correctOption
@@ -26,10 +27,9 @@ export default function Question() {
   let correctnessClass = ''
   if (correctness > 0) correctnessClass = 'partially-correct'
   if (correctness === 1) correctnessClass = 'correct'
-
-  console.log(correctness)
+  const isLocked = correctness === 1
   return (
-    <TogglesContext.Provider value={{ toggles, setToggles }}>
+    <TogglesContext.Provider value={{ toggles, setToggles, isLocked }}>
       <div className={`question ${correctnessClass}`}>
         <Toggles />
       </div>
