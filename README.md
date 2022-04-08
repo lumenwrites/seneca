@@ -1,5 +1,7 @@
 ## Seneca Test Task
-This is the test code assignment for Seneca - a component that creates 
+This is the test code assignment for Seneca - a responsive Toggle component:
+
+![](https://github.com/lumenwrites/seneca/blob/main/assets/toggles-screenshot.png)
 
 ## Assumptions and Limitations
 - See the `data/questions.json` folder for the list of questions, and the format data should be in.
