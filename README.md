@@ -3,6 +3,10 @@ This is the test code assignment for Seneca - a responsive Toggle component:
 
 ![](https://github.com/lumenwrites/seneca/blob/main/assets/toggles-screenshot.png)
 
+Try out the completed app here:
+
+https://seneca.vercel.app/
+
 ## Assumptions and Limitations
 - See the `data/questions.json` folder for the list of questions, and the format data should be in.
 - The component is reusable and extendable to any number of questions, with any number of toggles, with 2, 3, or more options.
