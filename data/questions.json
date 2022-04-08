@@ -33,7 +33,7 @@
       },
       {
         "id": 1,
-        "correctOption": 0,
+        "correctOption": 1,
         "selectedOption": 0,
         "options": ["More meetings", "Fewer meetings"]
       },
@@ -45,7 +45,7 @@
       },
       {
         "id": 3,
-        "correctOption": 0,
+        "correctOption": 1,
         "selectedOption": 0,
         "options": ["Bear in office", "Dog in office"]
       }
@@ -61,7 +61,7 @@
       },
       {
         "id": 1,
-        "correctOption": 0,
+        "correctOption": 1,
         "selectedOption": 0,
         "options": ["Serena Williams", "Naomi Osaka"]
       }
