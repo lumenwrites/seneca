@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { useTogglesContext } from './Question'
+import { useTogglesContext } from 'context/TogglesContext'
 import { IToggle } from './Question'
 
 interface ToggleProps {

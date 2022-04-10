@@ -1,4 +1,4 @@
-import { useTogglesContext } from './Question'
+import { useTogglesContext } from 'context/TogglesContext'
 import { Toggle } from './Toggle'
 
 export default function Toggles() {

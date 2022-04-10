@@ -1,19 +1,8 @@
-import { useState, createContext, useContext } from 'react'
-
-import questions from 'data/questions.json'
-
+import { useState } from 'react'
 import dynamic from 'next/dynamic'
 const Toggles = dynamic(() => import('../components/Toggles'), { ssr: false })
-
-const TogglesContext = createContext({
-  toggles: [],
-  setToggles: (prev) => {},
-  isLocked: false,
-})
-
-export function useTogglesContext() {
-  return useContext(TogglesContext)
-}
+import questions from 'data/questions.json'
+import { TogglesContext } from 'context/TogglesContext'
 
 export interface IToggle {
   id: number
