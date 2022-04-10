@@ -10,7 +10,7 @@ export const Toggle:FC<ToggleProps> = ({ toggle }) => {
   const { isLocked, setToggles } = useTogglesContext()
   const optionSize = 100 / toggle.options.length
 
-  function selectOption(idx) {
+  function selectOption(idx:number) {
     if (isLocked) return
     setToggles((prev) => {
       const updatedToggles = prev.map((t) => {

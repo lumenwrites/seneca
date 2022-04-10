@@ -1,8 +1,15 @@
+import { IToggle } from 'components/Question';
 import { createContext, useContext } from 'react'
 
-export const TogglesContext = createContext({
+interface ITogglesContext {
+  toggles: IToggle[],
+  setToggles: React.Dispatch<React.SetStateAction<IToggle[]>>,
+  isLocked: boolean
+}
+
+export const TogglesContext = createContext<ITogglesContext>({
   toggles: [],
-  setToggles: (prev) => { },
+  setToggles: () => { },
   isLocked: false,
 })
 
