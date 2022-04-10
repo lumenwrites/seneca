@@ -1,13 +1,9 @@
 import { FC } from 'react'
 import { useTogglesContext } from './Question'
+import { IToggle } from './Question'
 
 interface ToggleProps {
-  toggle: {
-    id: number,
-    correctOption: number,
-    selectedOption: number,
-    options: string[]
-  }
+  toggle: IToggle
 }
 
 export const Toggle:FC<ToggleProps> = ({ toggle }) => {

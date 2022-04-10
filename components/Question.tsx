@@ -15,8 +15,15 @@ export function useTogglesContext() {
   return useContext(TogglesContext)
 }
 
+export interface IToggle {
+  id: number
+  correctOption: number
+  selectedOption: number
+  options: string[]
+}
+
 export default function Question() {
-  const [toggles, setToggles] = useState(questions[0].toggles)
+  const [toggles, setToggles] = useState<IToggle[]>(questions[0].toggles)
   const [activeQuestion, setActiveQuestion] = useState(0)
   // Calculate percentage of correct answers, and set background based on that
   const correctAnswers = toggles.filter(
@@ -29,7 +36,7 @@ export default function Question() {
   const isLocked = correctness === 1
 
   function randomizeQuestion() {
-    setActiveQuestion(prev => {
+    setActiveQuestion((prev) => {
       let activeQuestion
       if (prev + 1 === questions.length) {
         activeQuestion = 0
